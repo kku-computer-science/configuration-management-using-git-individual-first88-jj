@@ -1,6 +1,12 @@
 *** Settings ***
 Library    SeleniumLibrary
 
+*** Test Cases ***
+Open KKU Website Test
+    [Documentation]    ทดสอบเปิดเว็บ KKU ด้วย Chrome Headless
+    Open Browser To Login Page
+    [Teardown]    Close Browser
+
 *** Keywords ***
 Open Browser To Login Page
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
